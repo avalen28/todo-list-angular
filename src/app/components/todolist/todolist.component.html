@@ -1,21 +1,23 @@
 <!-- list of tasks -->
 <h1>To do list</h1>
-<table>
-    <tr>
-        <th>Task name</th>
-        <th>Status</th>
-        <th>Actions</th>
-        <th></th>
-    </tr>
-<ng-container *ngFor="let task of taskList">
-    <tr>
-        <td>{{task.name}}</td>
-        <td>{{task.isFinished ? 'Finished' : 'Pending'}}</td>
-        <td><button (click)="changeTaskStatus(task.id)">Change status</button></td>
-        <td><button (click)="removeTask(task.id)">X</button></td>
-    </tr>
-</ng-container>
-</table>
+<div *ngIf="taskList.length">
+    <table>
+        <tr>
+            <th>Task name</th>
+            <th>Status</th>
+            <th>Actions</th>
+            <th></th>
+        </tr>
+        <ng-container *ngFor="let task of taskList">
+            <tr>
+                <td>{{task.name}}</td>
+                <td>{{task.isFinished ? 'Finished' : 'Pending'}}</td>
+                <td><button (click)="changeTaskStatus(task.id)">Change status</button></td>
+                <td><button (click)="removeTask(task.id)">X</button></td>
+            </tr>
+        </ng-container>
+    </table>
+</div>
 
 
 <!-- form to add new task -->
