@@ -52,4 +52,9 @@ export class TodolistComponent {
 
     this.taskList = updatedTaskList;
   }
+
+  removeTask(idOfTaskToRemove: number): void {
+    const copyOfTaskList = [...this.taskList].filter(task => task.id !== idOfTaskToRemove);
+    this.taskList = copyOfTaskList;
+  }
 }
