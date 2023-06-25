@@ -13,16 +13,18 @@ isFinished: boolean;
 
 export class TodolistComponent {
   taskList: Task[];
-  
+  newTask: string;
+
   constructor() {
-    this.taskList = [
-      {
-        name: 'wash dishes',
-        isFinished: true
-      },
-      {
-        name: 'grocery shopping',
-        isFinished: false
-      }]
+    this.taskList = [];
+    this.newTask = "";
+  }
+
+  addToList(): void{
+    this.taskList.push({
+      name: this.newTask,
+      isFinished: false
+    });
+    this.newTask = "";
   }
 }
