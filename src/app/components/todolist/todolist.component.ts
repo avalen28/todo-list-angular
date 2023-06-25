@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-interface Task {
-  id: number;
-  name: string;
-  isFinished: boolean;
-}
+import { Task } from 'src/app/interfaces/Task';
 
 @Component({
   selector: 'app-todolist',
