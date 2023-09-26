@@ -37,10 +37,14 @@ export class TodolistComponent {
   }
 
   changeTaskStatus(idOfTaskToUpdate: number): void {
+    //Cremos una variable con un arr de task que
+    //guardarán el map que retornamos
     const updatedTaskList = this.taskList.map(task => {
       if (task.id !== idOfTaskToUpdate) {
         return task
       }
+      // éste caso como task.id === idOfTaskToUpdate
+      // entra aquí.
       task.isFinished = !task.isFinished;
       return task
     });
